@@ -25,13 +25,13 @@ class DoodleGame :
         player_rect = pygame.Rect(self.player_x, self.player_y, PLAYER_SIZE, PLAYER_SIZE)
         
         for plat in self.platforms :
-            if player_rect.collidedict(plat) :
+            if player_rect.colliderect(plat) :
                 if self.speed > 0 and player_rect.bottom <= plat.top + 10 :
                     self.speed = JUMP_SPEED
                     break
                 
-            if self.player > HEIGHT :
-                self.player = HEIGHT - 100
+            if self.player_y> HEIGHT :
+                self.player_y = HEIGHT - 100
                 self.speed = 0
     
     def draw(self, screen) :
